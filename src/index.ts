@@ -7,3 +7,4 @@ app.use(express.json());
 app.use(cors())
 
 app.listen(3003, () => { console.log(`server is running in port 3003`)});
+ 
