@@ -20,16 +20,15 @@ export class FinanceDatabase extends BaseDatabase{
 
     createFinance = async (finance:any)=>{
         try {
+            
                 const {idFinance, value, description, type, idUser} = finance
                 await FinanceDatabase.connection(this.TABLE_NAME)
                     .insert({
                         idFinance,
                         value,
                         description,
-                        type
-                    })
-                    .where({
-                        id:idUser
+                        type,
+                        fk_user:idUser
                     })
         } catch (error:any) {
             throw new Error(error.message);

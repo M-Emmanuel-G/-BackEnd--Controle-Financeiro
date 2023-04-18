@@ -9,4 +9,4 @@ const financeController = new FinanceController();
 
 financeRouter.get('/:id', financeController.getFinance)
 financeRouter.delete('/:id', financeController.deleteFinance)
-financeRouter.post('/create/:id', financeController.createFinance)
+financeRouter.post('/create/:idUser', financeController.createFinance)
