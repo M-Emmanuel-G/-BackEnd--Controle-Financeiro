@@ -10,7 +10,7 @@ export class FinanceDatabase extends BaseDatabase{
                 .select()
                 .join("Users","C_Financeiro.fk_user","=","Users.id")
                 .where({
-                    idFinance: id
+                    fk_user: id
                 })
             return result    
         } catch (error:any) {
