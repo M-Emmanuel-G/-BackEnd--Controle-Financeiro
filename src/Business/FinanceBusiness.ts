@@ -56,7 +56,6 @@ export class FinanceBusines{
             const verifyFinance = await this.financeDatabase.getFinanceById(idFinance)
             if(verifyFinance.length === 0) throw new Error('Financa nao localizada.');
              
-
             await this.financeDatabase.deleteFinance(idFinance)
             
         } catch (error:any) {

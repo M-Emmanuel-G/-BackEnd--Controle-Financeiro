@@ -42,8 +42,9 @@ export class FinanceController{
             const idFinance = req.params.idFinance
 
             await this.financeBusiness.deleteFinance(idFinance)
+            res.status(200).send({message:"Finança excluida!"})
         } catch (error:any) {
-            throw new Error(error.message);
+            res.status(400).send(error.message);
         }
     }
     
