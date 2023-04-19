@@ -47,5 +47,18 @@ export class FinanceDatabase extends BaseDatabase{
             throw new Error(error.message);
         }
     }
+
+    getFinanceById = async (idFinance:string)=>{
+        try {
+            const result = await FinanceDatabase.connection(this.TABLE_NAME)
+                .select()
+                .where({
+                    idFinance
+                })
+            return result    
+        } catch (error:any) {
+            throw new Error(error.message);
+        }
+    }
     
 }

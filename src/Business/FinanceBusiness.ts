@@ -53,6 +53,9 @@ export class FinanceBusines{
     deleteFinance = async (idFinance:string)=>{
         try {
             if (!idFinance) throw new Error("ID nao foi inserido.");
+            const verifyFinance = await this.financeDatabase.getFinanceById(idFinance)
+            if(verifyFinance.length === 0) throw new Error('Financa nao localizada.');
+             
 
             await this.financeDatabase.deleteFinance(idFinance)
             
